@@ -28,7 +28,7 @@ namespace Demo1_consumer
             model.QueueDeclare(queue: "hello_queue", durable: true, exclusive: false, autoDelete: false, arguments: null);
             model.QueueBind(queue: "hello_queue", exchange: "hello_exchange", routingKey: string.Empty, arguments: null);
 
-            model.BasicQos(0, 100 , false);
+            model.BasicQos(0, 15_000 * 4, false);
 
             var consumer = new EventingBasicConsumer(model);
             consumer.Received += (innerModel, ea) =>
