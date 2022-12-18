@@ -67,8 +67,6 @@ namespace Demo1_consumer
 
             Console.ReadLine();
 
-
-            Console.WriteLine("Hello World!");
         }
     }
 }
