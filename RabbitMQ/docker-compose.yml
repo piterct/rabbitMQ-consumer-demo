@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  demo1-consumer:
+    image: ${DOCKER_REGISTRY-}demo1-consumer
+    build:
+      context: .
+      dockerfile: Demo1-consumer/Dockerfile
+    environment: {
+            "TZ": "America/Sao_Paulo"
+    }
+    networks:
+    - demo1-consumer
+
+
+networks:
+     demo1-consumer:
+       driver: bridge
